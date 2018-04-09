@@ -25,14 +25,14 @@ public class SwingGuiApplication implements CommandLineRunner, ApplicationListen
     private static ApplicationContext ctx;
 
 	public static void main(String[] args) throws Exception {
-		log.debug("1");
+		log.debug("1 - Main  method");
 		UIManager.setLookAndFeel(
 //				UIManager.getCrossPlatformLookAndFeelClassName());
 				UIManager.getSystemLookAndFeelClassName());
 
         // Ensure EDT
 		SwingUtilities.invokeAndWait(() -> {
-			log.debug("2");
+			log.debug("2 - inside AWT");
 			splash = new SplashScreen();
 			splash.setVisible(true);
 		});
@@ -48,18 +48,16 @@ public class SwingGuiApplication implements CommandLineRunner, ApplicationListen
 
 	@Override
 	public void run(String... args) throws Exception {
-		log.debug("3");
+		log.debug("3 - inside run");
         // Do something with the args if they are there
-		System.out.println("inside run");
 
 	}
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
-		log.debug("4");
 		// Nå er Containeren klar
-        System.out.println("Container ready. Displaying view.");
+        log.debug("4 - Container ready. Displaying view.");
 
         // Ensure EDT
 		SwingUtilities.invokeLater(() -> {

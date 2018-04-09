@@ -18,7 +18,7 @@ public class SplashScreen extends AbstractView {
     private JFrame frame;
 
     public SplashScreen() {
-        log.debug("1");
+        log.debug("1 - inside AWT");
         // super calls createView here
         frame = new JFrame();
         frame.setUndecorated(true);
@@ -29,7 +29,7 @@ public class SplashScreen extends AbstractView {
 
     @Override
     public void createView() {
-        log.debug("2");
+        log.debug("2 - inside AWT");
         setLayout(new BorderLayout());
         add(new JPanel().add(new JLabel("Splash", SwingConstants.CENTER)), BorderLayout.CENTER); // empty
         JProgressBar progressBar = new JProgressBar();
@@ -38,12 +38,12 @@ public class SplashScreen extends AbstractView {
     }
 
     public void setVisible(boolean visible) {
-        log.debug("3");
+        log.debug("3 - inside AWT");
         frame.setVisible(visible);
     }
 
     public void dispose() {
-        log.debug("4");
+        log.debug("4 - inside AWT");
         frame.dispose();
     }
 }
