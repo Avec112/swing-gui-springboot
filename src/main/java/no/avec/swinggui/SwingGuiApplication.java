@@ -14,11 +14,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 
 import javax.swing.*;
+import java.lang.invoke.MethodHandles;
 
 @SpringBootApplication
 public class SwingGuiApplication implements CommandLineRunner, ApplicationListener<ApplicationReadyEvent> {
 
-	private static Logger log = LoggerFactory.getLogger(SwingGuiApplication.class);
+	private static Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private static SplashScreen splash;
 //    private static MainController main;

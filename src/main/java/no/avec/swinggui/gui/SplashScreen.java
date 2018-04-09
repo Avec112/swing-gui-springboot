@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.invoke.MethodHandles;
 
 /**
  * SplashScreen is a swing application on its own.
@@ -14,7 +15,7 @@ import java.awt.*;
  */
 public class SplashScreen extends AbstractView {
 
-    private static Logger log = LoggerFactory.getLogger(SplashScreen.class);
+    private static Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private JFrame frame;
 
     public SplashScreen() {
